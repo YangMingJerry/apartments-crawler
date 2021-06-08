@@ -74,12 +74,13 @@ class Crawler(CrawlerABC):
         for key, value in out.items():
             if not js.is_in_json(key):
                 js.update_json(key,value)
-                logger.info(f'NEW ROOM FOUND: {key}')
+                logger.info(f'NEW ROOM FOUND: \n            address: {key}\n            content: {value}')
             elif js.is_changed(key,value):
                 js.update_json(key,value)
-                logger.info(f'ROOM CHANGED: \naddress: {key}\ncontent: {value}')
+                logger.debug(f'ROOM CHANGED: \n             address: {key}\n            content: {value}')
             else:
-                logger.info(f'PASS, OLD ROOM: {key}')
+                # logger.info(f'PASS, OLD ROOM: {key}')
+                pass
         js.write_back()
 
 

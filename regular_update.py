@@ -11,6 +11,11 @@ from conf.configure import *
 
 time_sleep_sec = time_sleep * 3600
 
+def count_down(time_left):
+    while time_left > 0:
+        print(f'\rrefresh in:{time_left}(s)',end="")
+        time.sleep(1)
+        time_left = time_left - 1
 
 c = Crawler()
 while True:
@@ -25,4 +30,7 @@ while True:
                 is_cat= is_cat,
                 is_washer= is_washer
         )
-    time.sleep(time_sleep_sec)
+    count_down(time_sleep_sec)
+
+
+

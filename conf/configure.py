@@ -3,7 +3,7 @@
 # Create at ：2021/6/8
 # tool      ：PyCharm
 
-json_save_path = '../data/apartments.json'
+json_save_path = 'data/apartments.json'
 
 use_url = False
 
@@ -16,5 +16,5 @@ is_washer=1
 
 url = ''
 # refresh for every xx hours
-time_sleep = 1
+time_sleep = 1/360
 

@@ -100,4 +100,4 @@ if __name__ == '__main__':
     c.run(location='brooklyn-ny', beds_num=3, price_low=3000, price_high=4500, is_cat=1, is_washer=1)
 
     # run by existed url to save what you see
-    c.run_by_url(url='https://www.apartments.com/3-bedrooms-3000-to-4200-pet-friendly-cat/washer-dryer/?bb=3mm6-t99vHw98oooB')
+    # c.run_by_url(url='https://www.apartments.com/3-bedrooms-3000-to-4200-pet-friendly-cat/washer-dryer/?bb=3mm6-t99vHw98oooB')

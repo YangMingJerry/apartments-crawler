@@ -62,27 +62,7 @@ class Proxy:
 
 class DataBaseHandlerABC:
     def __init__(self, envir='debug'):
-        if envir == 'debug':
-            self.conn = pymysql.connect(host='58.215.173.178',
-                                        port=6303,
-                                        user='dictionary_dev',
-                                        passwd='2h6WRYPpb6G4Y2KHOGN8N06j',
-                                        db='test')
-
-        if envir == 'local':
-            self.conn = pymysql.connect(host='58.215.173.178',
-                                        port=6303,
-                                        user='dictionary_dev',
-                                        passwd='2h6WRYPpb6G4Y2KHOGN8N06j',
-                                        db='nlp_dictionary_db')
-
-        if envir == 'server':
-            self.conn = pymysql.connect(host='10.26.130.85',
-                                        # host='58.215.173.178',
-                                        port=6303,
-                                        user='dictionary_dev',
-                                        passwd='2h6WRYPpb6G4Y2KHOGN8N06j',
-                                        db='nlp_dictionary_db')
+        pass
 
 
 

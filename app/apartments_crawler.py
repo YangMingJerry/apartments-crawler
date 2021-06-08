@@ -7,7 +7,7 @@ from lxml import etree
 from loguru import logger
 
 from schema.crawler_abc import *
-
+from conf.configure import json_save_path
 
 class JsonHandler:
     def __init__(self, path):
@@ -70,7 +70,7 @@ class Crawler(CrawlerABC):
         return url
 
     def write_back_json(self, out):
-        js = JsonHandler(path='apartments.json')
+        js = JsonHandler(path= json_save_path)
         for key, value in out.items():
             if not js.is_in_json(key):
                 js.update_json(key,value)
@@ -83,17 +83,21 @@ class Crawler(CrawlerABC):
         js.write_back()
 
 
-
-
-    def run(self, **kwargs):
-        url = self.get_url(**kwargs)
+    def run_by_url(self, url):
         html = self.get_html(url)
         out = self.html_parser(html)
         self.write_back_json(out)
+
+    def run(self, **kwargs):
+        url = self.get_url(**kwargs)
+        self.run_by_url(url)
 
 
 
 if __name__ == '__main__':
     c = Crawler()
+    # run by conditions
     c.run(location='brooklyn-ny', beds_num=3, price_low=3000, price_high=4500, is_cat=1, is_washer=1)
 
+    # run by existed url to save what you see
+    c.run_by_url(url='https://www.apartments.com/3-bedrooms-3000-to-4200-pet-friendly-cat/washer-dryer/?bb=3mm6-t99vHw98oooB')

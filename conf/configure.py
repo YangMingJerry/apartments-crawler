@@ -5,3 +5,4 @@
 
 # MySQL conf:
 
+json_save_path = 'data/apartments.json'

@@ -1,9 +1,25 @@
 # apartments-crawler
-fuck nyc rent price
+**fuck nyc rent price**
 
 本脚本实现了apartments.com网站的爬虫。
 
-在/app/apartments_crawler.py脚本中：
+**安装package：**
+
+打开命令行
+
+​	pip install -r requirements.txt
+
+**定期更新结果：**
+
+​	python regular_update.py
+
+**更改爬虫设置：**
+
+- /conf/configure.py
+
+**如果不喜欢使用命令行：**
+
+**在/app/apartments_crawler.py脚本中：**
 
 - 根据条件执行：
   ```python

@@ -2,8 +2,9 @@
 # Author    ：Yang Ming
 # Create at ：2021/6/8
 # tool      ：PyCharm
+from data import data_path
 
-json_save_path = 'data/apartments.json'
+json_save_path = data_path
 
 use_url = False
 

@@ -5,6 +5,8 @@
 import json
 import os
 import random
+import sys
+
 from loguru import logger
 import time
 import hashlib
@@ -15,6 +17,7 @@ import re
 
 from multiprocessing import Pool, Process
 from functools import partial
+from conf.configure import json_save_path
 
 
 class Proxy:
@@ -64,6 +67,32 @@ class DataBaseHandlerABC:
     def __init__(self, envir='debug'):
         pass
 
+class JsonHandler:
+    def __init__(self, path):
+        self.path = path
+        self.content = self.load_json()
+
+    def is_in_json(self, key):
+        return key in self.content
+
+    def is_changed(self, key, content):
+        return self.content.get(key,None) != content
+
+    def update_json(self, key, content):
+        self.content[key] = content
+
+    def write_back(self):
+        out_str = json.dumps(self.content)
+        with open(self.path, 'w') as file:
+            file.write(out_str)
+
+    def load_json(self):
+        if not os.path.isfile(self.path):
+            return {}
+        with open(self.path, 'r') as file:
+            out = file.read()
+        out_json = json.loads(out)
+        return out_json
 
 
 class CrawlerABC:
@@ -105,3 +134,39 @@ class CrawlerABC:
 
     def get_time(self):
         return time.strftime("%Y-%m-%d-%H-%M-%S", time.localtime())
+
+    def write_back_json(self, out, json_save_path):
+        js = JsonHandler(path= json_save_path)
+        for key, value in out.items():
+            if not js.is_in_json(key):
+                js.update_json(key,value)
+                logger.info(f'NEW ROOM FOUND: \naddress: {key}\ncontent: {value}')
+            elif js.is_changed(key,value):
+                js.update_json(key,value)
+                logger.debug(f'ROOM CHANGED: \naddress: {key}\ncontent: {value}')
+            else:
+                # logger.info(f'PASS, OLD ROOM: {key}')
+                pass
+        js.write_back()
+
+    def html_parser(self, html):
+        pass
+
+    def get_url(self, **kwargs):
+        pass
+
+    def run(self, **kwargs):
+        url = self.get_url(**kwargs)
+        self.run_by_url(url)
+
+    def run_by_url(self, url):
+        html = self.get_html(url)
+        out = self.html_parser(html)
+        self.write_back_json(out, self.get_save_path(json_save_path))
+
+    def get_save_path(self, json_save_path):
+        pass
+        # name = os.path.split(__file__)[-1].split('_')[0]
+        # # name = os.path.split(os.path.abspath(sys.argv[0]))[-1].split('_')[0]
+        # path = json_save_path.replace('__token__',name)
+        # return path

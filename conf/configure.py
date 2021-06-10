@@ -24,6 +24,7 @@ c2 = Crawler_streeteasy()
 c_dict = {'apartments': c1,
           'streeteasy': c2}
 
+## 爬虫任务列表
 url_list = [{
     'neighbourhood': 'williamsburg',
     'source': 'streeteasy',
@@ -37,7 +38,33 @@ url_list = [{
     'source': 'streeteasy',
     'url': 'https://streeteasy.com/3-bedroom-apartments-for-rent/greenpoint/status:open%7Cprice:3000-4000%7Camenities:washer_dryer,pets'
 },
+{
+    'neighbourhood': 'sunnyside',
+    'source': 'streeteasy',
+    'url': 'https://streeteasy.com/3-bedroom-apartments-for-rent/sunnyside-queens/status:open%7Cprice:3000-4000%7Camenities:washer_dryer,pets'
+},
+{
+    'neighbourhood': 'williamsburg',
+    'source': 'apartments',
+    'url': 'https://www.apartments.com/williamsburg-brooklyn-ny/3-bedrooms-3000-to-4200-pet-friendly-cat/washer-dryer/'
+},
+{
+    'neighbourhood': 'greenpoint',
+    'source': 'apartments',
+    'url': 'https://www.apartments.com/greenpoint-brooklyn-ny/3-bedrooms-3000-to-4200-pet-friendly-cat/washer-dryer/'
+},
+{
+    'neighbourhood': 'LIC',
+    'source': 'apartments',
+    'url': 'https://www.apartments.com/long-island-city-ny/3-bedrooms-3000-to-4200-pet-friendly-cat/washer-dryer/'
+},
+
+{
+    'neighbourhood': 'sunnyside',
+    'source': 'apartments',
+    'url': 'https://www.apartments.com/sunnyside-ny/3-bedrooms-3000-to-4200-pet-friendly-cat/washer-dryer/'
+},
 ]
 # refresh for every xx hours
-time_sleep = 1/360
+time_sleep = 1/60
 

@@ -7,7 +7,6 @@ from lxml import etree
 from loguru import logger
 
 from schema.crawler_abc import *
-from conf.configure import json_save_path
 
 
 class Crawler(CrawlerABC):

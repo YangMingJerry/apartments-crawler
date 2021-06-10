@@ -5,20 +5,14 @@
 import json
 import os
 import random
-import sys
 
 from loguru import logger
 import time
-import hashlib
-import pymysql
 import requests
-import datetime
-import re
 
-from multiprocessing import Pool, Process
-from functools import partial
-from conf.configure import json_save_path
-
+from utils.google_sheet_handler import GoogleSheetHandler
+from data import data_path as json_save_path
+sheets_url = 'https://docs.google.com/spreadsheets/d/14KGHHymCvKqTNizqU5D8eB5DhqmmlToWl7krQJw0jgo/edit#gid=1316632945'
 
 class Proxy:
 
@@ -157,12 +151,21 @@ class CrawlerABC:
 
     def run(self, **kwargs):
         url = self.get_url(**kwargs)
-        self.run_by_url(url)
+        return self.run_by_url(url, **kwargs.get('mode'))
 
-    def run_by_url(self, url):
+    def run_by_url(self, url, mode):
         html = self.get_html(url)
         out = self.html_parser(html)
-        self.write_back_json(out, self.get_save_path(json_save_path))
+        if mode == 'json':
+            self.write_back_json(out, self.get_save_path(json_save_path))
+        elif mode == 'google sheets':
+            self.write_back_google_sheets(out)
+        return out
+
+    def write_back_google_sheets(self, out):
+        gsh = GoogleSheetHandler(sheets_url)
+        gsh.writeback(out)
+
 
     def get_save_path(self, json_save_path):
         pass

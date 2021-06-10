@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "apartments-crawler",
+  "private_key_id": "a62ef21f06e2244a46080152f5469f80c55e1bbf",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC2bwv/aUS8wR7x\ntEu4j0CTHGoLIDJxzXt55LHA7aNZC9FmKJ4N9azITnrOhOp0eJNu3cpN04Z0pJvY\nRm3rpdP845xcLzTMOQvrFFp9UlQCgIZ7Czgq8jmLiabLLXLfuYX296AFU+shYWYv\ngg++pWEGGsegu0MaWAaVOahQ3A/msGVrTkmyROmXBKSP5qTwH7RDTNha2YlLOM4R\ncdxnNRg9t/w+MrIi85sJ+lC3sWDPSde5/FtJrzNkpcxzrQZr8zqiFKlk/ewM1ema\nwQUfolCQBWYK1X5Np7qMXPJgOPVvRppEBugqwFWeZEU9Y27rEYFwdDxCjfqBSLsL\nclwORpt7AgMBAAECggEANjK7b7/IagM9vDUCIex9FLdmUbPZCLIxMr9ch6KR2syG\nA0Gh4yfPkxqtpVkbhkqkElXV2lUzJsgYfKI/2bhESGcedsyXdOylu8sqLv0cdDnW\nugtVPn0D146nfMkdzZWCVSKv6aVKv3n+L7MGFm9vaa7fC8NWZicsnXypooweNTxG\nFxV+mRC/CEsHrrMrE2wM47x/DX+ULeweNjiHK3zlZEkIlGxIMyhFeuNZb60yJIJL\nbsxRyBjCAYYxvR/L8bzjnmfIgn5AtUQPfveRwP9QwUZuPzsXv8W17Dexuc09I0fV\n+uXvzJCQFfhB1TYFIfanzA4wqRJcEen1d64EJKa7MQKBgQDcOkwt6AW38jCKJsFt\nCUletXhCnSgd9iQZMCk/dn1A3THC2h52AgO+FalDEwh4OYDiLZmfAwilrlDONNj4\npFcl2JP+Knc/f8+UW8vTBcZ61UwL26HUmQhwySOAc2w+1/ioSW8iC/2HwShfzVJ0\nHx6cIq9NSsAMQ/m/7agNQX8NfQKBgQDUESsOlOYtgGgTchM7+E9SbXDUnesKOX3W\n9M//URGo69bq+xcyv4A5elCF6V190t3rJZF1Fbs4t5C5F/e5gR+Fen0HIe2webZ1\nmpafaN3jqLHxXpjyECsxBKfx+JgiKijgWa71ZTSbwvw1NAGXa8ixQMCjPiKXbhAC\nEEERGUP+VwKBgQCX6Iafq8o2BhNBWFZX9e3sLFTV7j273QstbLEnG35ufaVTeM1G\nLUGTnrFwmPJgq5mhaj7rFlaiokkO1BlN+V47ttbunTBAVtNCzMcduoAcPoEENO2+\nDglqcvPQKM3j02mr+2tzGr45JB3LZ3+WpdihbrNpJ0StsT3XDAG9kw4mqQKBgQCm\nMiI9VkIiDM0D2FXsnMiFf9F6P5yxMadGbCwKGt2tNc8D7u4aTmxOH2a129LyRey3\nWYTqbrKAW5QnCvqQvfoXIIyVp2hg8rIk7pb2rTegMFfsIsfYhQVkcBKylrGbrNDG\nKmLsXHljTOddRrmsksMA7w9Jn+t6I76V72ke3l8kFwKBgHLbsXVWqyoVewnDP+E/\nobCjhW5eNB86g+KRk0asIoEa6MECUkyPS2G+e4hW3Iv7r+vdiFVeDI/1Jp/He4X9\n5GO43uH0ni9RBJVEtidDlwvBbE9btOVWup0dgb1NmnByMPvKjqYv009JsA4/n1bC\nKO7y7hQmS0yLydFmUNukdihf\n-----END PRIVATE KEY-----\n",
+  "client_email": "apartment-crawler-39@apartments-crawler.iam.gserviceaccount.com",
+  "client_id": "108510079961401352527",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/apartment-crawler-39%40apartments-crawler.iam.gserviceaccount.com"
+}

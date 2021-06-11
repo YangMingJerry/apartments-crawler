@@ -66,5 +66,5 @@ url_list = [{
 },
 ]
 # refresh for every xx hours
-time_sleep = 1/60
+time_sleep = 1
 
